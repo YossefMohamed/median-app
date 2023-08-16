@@ -28,7 +28,7 @@ export class ArticlesService {
   }
 
   remove(id: number) {
-    return `This action removes a #${id} article`;
+    return this.prisma.article.delete({ where: { id } });
   }
 
   findDrafts() {
