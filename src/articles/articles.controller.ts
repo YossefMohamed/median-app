@@ -6,13 +6,15 @@ import {
   Patch,
   Param,
   Delete,
-  ParseIntPipe,
+  NotFoundException,
+  UseGuards,
 } from '@nestjs/common';
 import { ArticlesService } from './articles.service';
 import { CreateArticleDto } from './dto/create-article.dto';
 import { UpdateArticleDto } from './dto/update-article.dto';
 import { ApiCreatedResponse, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { ArticleEntity } from './entities/article.entity';
+import { AuthGuard } from 'src/auth/auth.guard';
 
 @Controller('articles')
 @ApiTags('articles')
@@ -37,24 +39,30 @@ export class ArticlesController {
     return this.articlesService.findAll();
   }
 
+  @Get()
+  @ApiOkResponse({ type: ArticleEntity, isArray: true })
+  @UseGuards(AuthGuard)
+  findAllByUser() {
+    return this.articlesService.findAllByUser('ssssssssssss');
+  }
+
   @Get(':id')
   @ApiOkResponse({ type: ArticleEntity })
-  findOne(@Param('id', ParseIntPipe) id: number) {
-    return this.articlesService.findOne(id);
+  async findOne(@Param('id') id: string) {
+    const article = await this.articlesService.findOne(id);
+    if (article) return article;
+    throw new NotFoundException(`Article with ${id} does not exist.`);
   }
 
   @Patch(':id')
   @ApiOkResponse({ type: ArticleEntity })
-  update(
-    @Param('id', ParseIntPipe) id: number,
-    @Body() updateArticleDto: UpdateArticleDto,
-  ) {
+  update(@Param('id') id: string, @Body() updateArticleDto: UpdateArticleDto) {
     return this.articlesService.update(id, updateArticleDto);
   }
 
   @Delete(':id')
   @ApiOkResponse({ type: ArticleEntity })
-  remove(@Param('id', ParseIntPipe) id: number) {
+  remove(@Param('id') id: string) {
     return this.articlesService.remove(id);
   }
 }

@@ -5,7 +5,7 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class ArticleEntity implements Article {
   @ApiProperty()
-  id: number;
+  id: string;
 
   @ApiProperty()
   title: string;
@@ -18,6 +18,9 @@ export class ArticleEntity implements Article {
 
   @ApiProperty()
   published: boolean;
+
+  @ApiProperty()
+  slug: string;
 
   @ApiProperty()
   createdAt: Date;

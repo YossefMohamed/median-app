@@ -16,22 +16,30 @@ export class ArticlesService {
     return this.prisma.article.findMany({ where: { published: true } });
   }
 
-  findOne(id: number) {
+  findOne(id: string) {
     return this.prisma.article.findUnique({ where: { id } });
   }
 
-  update(id: number, updateArticleDto: UpdateArticleDto) {
+  update(id: string, updateArticleDto: UpdateArticleDto) {
     return this.prisma.article.update({
       where: { id },
       data: updateArticleDto,
     });
   }
 
-  remove(id: number) {
+  remove(id: string) {
     return this.prisma.article.delete({ where: { id } });
   }
 
   findDrafts() {
-    return this.prisma.article.findMany({ where: { published: false } });
+    return this.prisma.article.findMany({
+      where: { published: false },
+    });
+  }
+
+  findAllByUser(userId: string) {
+    return this.prisma.article.findMany({
+      where: { authorId: userId },
+    });
   }
 }
