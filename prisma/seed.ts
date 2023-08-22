@@ -16,6 +16,7 @@ async function main() {
       description:
         'Embark on a journey to discover the hidden treasures of Egypt and immerse yourself in its ancient civilization.',
       published: false,
+      authorId: 'true',
     },
   });
 
@@ -28,6 +29,7 @@ async function main() {
       description:
         'Explore the culinary delights of Egypt and experience the unique blend of flavors that make its cuisine so special.',
       published: true,
+      authorId: 'true',
     },
   });
 

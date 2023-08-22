@@ -4,6 +4,7 @@ import { ValidationPipe } from '@nestjs/common';
 
 import { AppModule } from './app.module';
 import { PrismaClientExceptionFilter } from './errorHandling/prisma-client-exception/prisma-client-exception.filter';
+import { UnauthorizedExceptionFilter } from './errorHandling/authorization/authorization.filter';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
@@ -17,9 +18,11 @@ async function bootstrap() {
   const config = new DocumentBuilder()
     .setTitle('Median')
     .setDescription('The Median API description')
-    .setVersion('0.1')
+    .setVersion('1.0')
+    .addBearerAuth()
     .build();
   app.useGlobalFilters(new PrismaClientExceptionFilter());
+  app.useGlobalFilters(new UnauthorizedExceptionFilter());
 
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);

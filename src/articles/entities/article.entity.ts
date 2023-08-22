@@ -20,7 +20,7 @@ export class ArticleEntity implements Article {
   published: boolean;
 
   @ApiProperty()
-  slug: string;
+  authorId: string;
 
   @ApiProperty()
   createdAt: Date;
