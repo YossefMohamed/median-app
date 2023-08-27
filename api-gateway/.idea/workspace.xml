@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8e5492a3-d513-44ce-b82b-f01cfd99a73c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/median/gateway/GatewayApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/median/gateway/GatewayApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../articles-service/prisma/migrations/20230823090914_init/migration.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../articles-service/prisma/migrations/migration_lock.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../articles-service/prisma/migrations/migration_lock.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../articles-service/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/../articles-service/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../articles-service/src/app.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../articles-service/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../articles-service/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../articles-service/src/articles/articles.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../articles-service/src/articles/articles.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../articles-service/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../articles-service/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../infra/k8s/articles-depl.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../infra/k8s/articles-depl.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2UWDVNhZWBwbWdhAqgYYGvlJT7L" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "E:/Yossef Mohamed/projects/median-nestjs/auth-service"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8e5492a3-d513-44ce-b82b-f01cfd99a73c" name="Changes" comment="" />
+      <created>1693046490857</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1693046490857</updated>
+    </task>
+    <servers />
+  </component>
+</project>
