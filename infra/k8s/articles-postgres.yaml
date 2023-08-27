@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: articles-postgres-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: articles-postgres
+  template:
+    metadata:
+      labels:
+        app: articles-postgres
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:13.5
+          env:
+            - name: POSTGRES_USER
+              value: myuser
+            - name: POSTGRES_PASSWORD
+              value: mypassword
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - name: postgres-storage
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: postgres-storage
+          emptyDir: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: articles-postgres-srv
+spec:
+  selector:
+    app: articles-postgres
+  ports:
+    - protocol: TCP
+      port: 5432
+      targetPort: 5432
