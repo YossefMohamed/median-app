@@ -14,7 +14,7 @@ services:
   api-gateway:
     image: yossef29/api-gateway
     ports:
-      - "8000"
+      - "8000:8000"
     depends_on:
       - postgres
 
@@ -32,7 +32,8 @@ services:
     image: yossef29/articles
     environment:
       - DATABASE_URL=postgres://myuser:mypassword@articles-postgres:5432/median-db
-    command: ["npx", "prisma", "migrate", "dev", "--name", "init"]
+    command: >
+      sh -c "npx prisma db push && npm run start"
     ports:
       - "3000:3000"
     depends_on:
