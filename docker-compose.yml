@@ -33,7 +33,7 @@ services:
     environment:
       - DATABASE_URL=postgres://myuser:mypassword@articles-postgres:5432/median-db
     command: >
-      sh -c "npx prisma db push && npm run start"
+      sh -c "npx prisma db push && node ./prisma/seed && npm run start"
     ports:
       - "3000:3000"
     depends_on:
