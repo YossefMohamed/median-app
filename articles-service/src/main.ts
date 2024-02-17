@@ -9,6 +9,8 @@ import { NotFoundExceptionFilter } from './errorHandling/notFound/notFound.filte
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  console.log('this is the value of DATABASEURL', process.env.DATABASE_URL);
+
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
