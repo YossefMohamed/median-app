@@ -14,6 +14,9 @@ setupProxies(app, ROUTES);
 
 const port = 8000;
 
+app.get("/", (req, res) => {
+  res.send("api gateway is running");
+});
 app.listen(port, () => {
   console.log(`Express is listening at http://localhost:${port}`);
   // swaggerDocs(app, Number(port));

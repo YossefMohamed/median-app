@@ -11,5 +11,33 @@ services:
     ports:
       - "5432:5432"
 
+  api-gateway:
+    image: yossef29/api-gateway
+    ports:
+      - "8000"
+    depends_on:
+      - postgres
+
+  articles-postgres:
+    image: postgres:13.5
+    environment:
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=mypassword
+    volumes:
+      - postgres-storage:/var/lib/postgresql/data
+    ports:
+      - "5433:5432" # Change host port to avoid conflict
+
+  articles:
+    image: yossef29/articles
+    environment:
+      - DATABASE_URL=postgres://myuser:mypassword@articles-postgres:5432/median-db
+    command: ["npx", "prisma", "migrate", "dev", "--name", "init"]
+    ports:
+      - "3000:3000"
+    depends_on:
+      - articles-postgres
+
 volumes:
   postgres:
+  postgres-storage:

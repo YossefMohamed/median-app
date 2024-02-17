@@ -4,6 +4,7 @@ import { PrismaClient } from '@prisma/client';
 
 // initialize Prisma Client
 const prisma = new PrismaClient();
+console.log(process.env.DATABASE_URL);
 
 async function main() {
   // create two dummy articles about Egypt
